@@ -121,7 +121,7 @@ public class UserController {
                 session.setAttribute("SS_USER_NAME", CmmUtil.nvl(rDTO.getUser_name()));
 
                 msg = "로그인이 성공했습니다. \n" + rDTO.getUser_name()+"님 환영합니다.";
-                url = "/main";
+                url = "/main/index";
             } else {
                 msg = "로그인이 실패했습니다.";
                 url = "/user/login";
