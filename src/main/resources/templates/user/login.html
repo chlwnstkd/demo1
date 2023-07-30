@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>로그인하기</title>
-    <link rel="stylesheet" href="/css/table.css"/>
+    <link rel="stylesheet" href="/css/login.css"/>
     <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
 
@@ -47,47 +47,25 @@
     </script>
 </head>
 <body>
-<h2>로그인하기</h2>
-<hr/>
-<br/>
 <form action="/user/loginProc" method="post" onsubmit="checkInputData()" id="f">
     <div class="login-box">
         <div class="lb-header">
             <a href="#" class="active" id="login-box-link">Login</a>
-            <a href="#" id="signup-box-link">Sign Up</a>
         </div>
         <form class="email-login">
             <div class="u-form-group">
-                <input type="email" placeholder="Email"/>
+                <input type="text" placeholder="Id"/>
             </div>
             <div class="u-form-group">
                 <input type="password" placeholder="Password"/>
             </div>
             <div class="u-form-group">
-                <button id="btnLogin" type="submit">Log in</button>
+                <button id="btnLogin" type="submit">login</button>
             </div>
             <div class="u-form-group">
-                <a href="#" class="forgot-password">Forgot password?</a>
+                <button id="btnUserReg" type="button">Sign up</button>
             </div>
         </form>
-        <form class="email-signup">
-            <div class="u-form-group">
-                <input type="email" placeholder="Email"/>
-            </div>
-            <div class="u-form-group">
-                <input type="password" placeholder="Password"/>
-            </div>
-            <div class="u-form-group">
-                <input type="password" placeholder="Confirm Password"/>
-            </div>
-            <div class="u-form-group">
-                <button id="btnUserReg" type="button">Sign Up</button>
-            </div>
-        </form>
-    </div>
-    <div>
-        <button id="btnSearchUserId" type="button">아이디 찾기</button>
-        <button id="btnSearchPassword" type="button">비밀번호 찾기</button>
     </div>
 </form>
 </body>
