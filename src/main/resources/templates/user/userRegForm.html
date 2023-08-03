@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>회원가입 화면</title>
-    <link rel="stylesheet" href="/css/login.css"/>
+    <link rel="stylesheet" href="/css/loginResult.css"/>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
@@ -188,25 +188,25 @@
                 return;
             }
 
-            // // Ajax 호출해서 회원가입하기
-            // $.ajax({
-            //         url: "/user/insertUserInfo",
-            //         type: "post", // 전송방식은 Post
-            //         dataType: "JSON", // 전송 결과는 JSON으로 받기
-            //         data: $("#f").serialize(), // form 태그 내 input 등 객체를 자동으로 전송할 형태로 변경하기
-            //         success: function (json) { // /notice/noticeUpdate 호출이 성공했다면..
-            //
-            //             if (json.result === 1) { // 회원가입 성공
-            //                 alert(json.msg); // 메시지 띄우기
-            //                 location.href = "/user/login"; // 로그인 페이지 이동
-            //
-            //             } else { // 회원가입 실패
-            //                 alert(json.msg); // 메시지 띄우기
-            //             }
-            //
-            //         }
-            //     }
-            // )
+            // Ajax 호출해서 회원가입하기
+            $.ajax({
+                    url: "/user/insertUserInfo",
+                    type: "post", // 전송방식은 Post
+                    dataType: "JSON", // 전송 결과는 JSON으로 받기
+                    data: $("#f").serialize(), // form 태그 내 input 등 객체를 자동으로 전송할 형태로 변경하기
+                    success: function (json) { // /notice/noticeUpdate 호출이 성공했다면..
+
+                        if (json.result === 1) { // 회원가입 성공
+                            alert(json.msg); // 메시지 띄우기
+                            location.href = "/user/login"; // 로그인 페이지 이동
+
+                        } else { // 회원가입 실패
+                            alert(json.msg); // 메시지 띄우기
+                        }
+
+                    }
+                }
+            )
         }
 
     </script>
@@ -221,15 +221,15 @@
         <form class="email-signup">
             <div class="u-form-group">
                 <input type="text" placeholder="ID"/>
+                <button id="btnUserId" type="button">duplicate check</button>
             </div>
-            <button id="btnUserId" type="button">duplicate check</button>
             <div class="u-form-group">
                 <input type="email" placeholder="Email"/>
             </div>
             <div class="u-form-group">
                 <input type="text" placeholder="Certification Number"/>
+                <button id="btnEmail" type="button">duplicate check</button>
             </div>
-            <button id="btnEmail" type="button">duplicate check</button>
             <div class="u-form-group">
                 <input type="password" placeholder="Password"/>
             </div>
