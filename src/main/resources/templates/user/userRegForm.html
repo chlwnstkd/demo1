@@ -20,19 +20,19 @@
             let f = document.getElementById("f"); // form 태그
 
             // 아이디 중복체크
-            $("btnUserId").on("click", function () { // 버튼 클릭했을때, 발생되는 이벤트 생성함(onclick 이벤트와 동일함)
+            $("#btnUserId").on("click", function () { // 버튼 클릭했을때, 발생되는 이벤트 생성함(onclick 이벤트와 동일함)
                 userIdExists(f)
 
             })
 
             // 이메일 중복체크
-            $("btnEmail").on("click", function () { // 버튼 클릭했을때, 발생되는 이벤트 생성함(onclick 이벤트와 동일함)
+            $("#btnEmail").on("click", function () { // 버튼 클릭했을때, 발생되는 이벤트 생성함(onclick 이벤트와 동일함)
                 emailExists(f)
 
             })
 
             //회원가입
-            $("btnSend").on("click", function () {
+            $("#btnSend").on("click", function () {
                 doSubmit(f);
             })
 
