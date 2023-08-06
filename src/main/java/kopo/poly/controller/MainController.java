@@ -33,5 +33,10 @@ public class MainController {
         log.info(this.getClass().getName() + ".single 페이지 보여주는 함수 실행");
         return "/main/single";
     }
+    @GetMapping("/main/purchaseList")
+    public String purchaseList() throws Exception {
+        log.info(this.getClass().getName() + ".single 페이지 보여주는 함수 실행");
+        return "/main/purchaseList";
+    }
 
 }
