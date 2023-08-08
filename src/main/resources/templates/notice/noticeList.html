@@ -11,19 +11,16 @@
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/templatemo.css">
-    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/css.css">
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
-    <link rel="stylesheet" href="/table-06/css/style.css">
-    <link rel="stylesheet" href="/css/table.css"/>
     <script type="text/javascript">
 
         //상세보기 이동
@@ -39,14 +36,7 @@
     https://templatemo.com/tm-559-zay-shop
 
     -->
-    <script type="text/javascript">
 
-        //상세보기 이동
-        function doDetail(seq) {
-            location.href = "/notice/noticeInfo?nSeq=" + seq;
-        }
-
-    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
@@ -74,7 +64,7 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow">
     <div class="container d-flex justify-content-between align-items-center">
 
-        <a class="navbar-brand text-success logo h1 align-self-center" href="index">
+        <a class="navbar-brand text-success logo h1 align-self-center" href="/main/index">
             Poly
         </a>
 
@@ -123,36 +113,47 @@
 
     </div>
 </nav>
-<div class="divTable minimalistBlack">
-    <div class="divTableHeading">
-        <div class="divTableRow">
-            <div class="divTableHead">순번</div>
-            <div class="divTableHead">제목</div>
-            <div class="divTableHead">조회수</div>
-            <div class="divTableHead">등록자</div>
-            <div class="divTableHead">등록일</div>
-        </div>
+<div class="board_wrap">
+    <div class="board_title">
+        <strong>공지사항</strong>
+        <p>공지사항을 빠르고 정확하게 안내해드립니다.</p>
     </div>
-    <div class="divTableBody">
-
-        <div class="divTableRow" th:each="dto:${rList}">
-            <!--공지글이라면, [공지]표시-->
-            <div class="divTableCell" th:if="${dto.notice_yn=='Y'}">공지</div>
-            <!--공지글이 아니라면, 글번호 보여주기-->
-            <div class="divTableCell" th:unless="${dto.notice_yn=='Y'}">[[${dto.notice_seq}]]</div>
-            <div class="divTableCell"
-                 th:attr="onclick='doDetail(\'' + ${dto.notice_seq} + '\')'">[[${dto.title}]]
+    <div class="board_list_wrap">
+        <div class="board_list">
+            <div class="top">
+                <div class="title">제목</div>
+                <div class="writer">글쓴이</div>
+                <div class="date">작성일</div>
+                <div class="count">조회</div>
             </div>
-            <div class="divTableCell">[[${dto.read_cnt}]]
+            <div class="num" th:each="dto:${rList}">
+                <div class="divTableCell" th:if="${dto.notice_yn=='Y'}">공지</div>
+                <!--공지글이 아니라면, 글번호 보여주기-->
+                <div class="divTableCell" th:unless="${dto.notice_yn=='Y'}">[[${dto.notice_seq}]]</div>
+                <div class="title" th:attr="onclick='doDetail(\'' + ${dto.notice_seq} + '\')'">[[${dto.title}]]
+                <div class="writer">[[${dto.user_id}]]</div>
+                <div class="date">[[${dto.reg_dt}]]</div>
+                <div class="count" >[[${dto.read_cnt}]]</div>
             </div>
-            <div class="divTableCell">[[${dto.user_id}]]
-            </div>
-            <div class="divTableCell">[[${dto.reg_dt}]]
-            </div>
+        </div>
+        <div class="board_page">
+            <a href="#" class="bt first"><<</a>
+            <a href="#" class="bt prev"><</a>
+            <a href="#" class="num on">1</a>
+            <a href="#" class="num">2</a>
+            <a href="#" class="num">3</a>
+            <a href="#" class="num">4</a>
+            <a href="#" class="num">5</a>
+            <a href="#" class="bt next">></a>
+            <a href="#" class="bt last">>></a>
+        </div>
+        <div class="bt_wrap">
+            <a href="/notice/noticeReg" class="on">등록</a>
+            <!--<a href="#">수정</a>-->
         </div>
     </div>
 </div>
-<a href="/notice/noticeReg">글쓰기</a>
+</div>
 <footer class="bg-dark" id="tempaltemo_footer">
     <div class="container">
         <div class="row">

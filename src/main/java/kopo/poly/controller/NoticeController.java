@@ -38,6 +38,19 @@ public class NoticeController {
         log.info(this.getClass().getName() + ".noticeList End!");
         return "/notice/noticeList";
     }
+    @GetMapping(value = "/notice/list")
+    public String List(ModelMap model)
+            throws Exception {
+        log.info(this.getClass().getName() + ".List Start!");
+
+        List<NoticeDTO> rList = noticeService.getNoticeList();
+        if (rList == null) rList = new ArrayList<>();
+
+        model.addAttribute("rList", rList);
+
+        log.info(this.getClass().getName() + ".noticeList End!");
+        return "/notice/list";
+    }
 
     @GetMapping(value = "/notice/noticeReg")
     public String NotuceReg() {
