@@ -6,10 +6,12 @@
 </head>
 <body>
 <script th:inline="javascript">
-  let msg = [[${msg}]];
-  let url = [[${url}]];
-  alert(msg);
-  location.href=url;
+  window.onload = function () {
+    let msg = [[${msg}]];
+    let url = [[${url}]];
+    alert(msg);
+    location.href = url;
+  }
 </script>
 <meta charset="UTF-8">
 </body>

@@ -1,8 +1,8 @@
 @media (max-width: 1000px) {
     .board_wrap {
-        width: 80%;
-        /*min-width: 220px;*/
-        padding: 0 10px;
+        width: 100%;
+        min-width: 320px;
+        padding: 0 30px;
         box-sizing: border-box;
     }
 
@@ -32,7 +32,7 @@
     .board_page a.bt {
         padding-top: 7px;
     }
-
+    
     .board_page a.num {
         padding-top: 6px;
     }
