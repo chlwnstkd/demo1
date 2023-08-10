@@ -149,20 +149,22 @@
     </div>
 </nav>
 <form action="/notice/noticeUpdate" method="post" name="f" id="f">
+    <input type="hidden" name="nSeq" th:value="${rDTO.notice_seq}"/>
     <div class="board_wrap">
         <div class="board_write_wrap">
             <div class="board_write">
                 <div class="title">
-                    <dl>
-                        <dt>제목</dt>
-                        <dd><input type="text" name="title" placeholder="제목 입력" value="글 제목이 들어갑니다">[[${rDTO.title}]]</dd>
-                    </dl>
-                </div>
-                <div class="info">
-                <div class="cont">
-                    <textarea name="contents" placeholder="내용 입력">
-[[${rDTO.contents}]]
-</textarea>
+                    <div class="title">
+                        <dl>
+                            <dt>제목</dt>
+                            <dd><input type="text" id="title" name="title" value=""></dd>
+                        </dl>
+                    </div>
+                    <div class="info">
+                        <div class="cont">
+                            <textarea name="contents" placeholder="내용 입력">[[${rDTO.contents}]]</textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
             </div>
@@ -273,6 +275,9 @@
 <script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/templatemo.js"></script>
 <script src="/js/custom.js"></script>
+<script>
+    document.getElementById("title").value = [[${rDTO.title}]];
+</script>
 <!-- End Script -->
 </body>
 </html>

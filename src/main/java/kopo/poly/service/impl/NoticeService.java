@@ -27,7 +27,7 @@ public class NoticeService implements INoticeService {
     @Transactional
     @Override
     public NoticeDTO getNoticeInfo(NoticeDTO pDTO, boolean type) throws Exception {
-        log.info(this.getClass().getName() + ".getnotuceInfo start!");
+        log.info(this.getClass().getName() + ".getnoticeInfo start!");
 
         if(true) {
             log.info("Update ReadCNT");

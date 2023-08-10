@@ -35,11 +35,11 @@
     </update>
     <update id="updateNoticeInfo" parameterType="NoticeDTO">
         UPDATE NOTICE SET
-            TITELE = #{title},
-            NOTICE_YN = #{notice_yn},
-            CONTENTS = #{contents},
-            CHG_ID = #{user_id},
-            CHG_DT = SYSDATE()
+                          TITLE = #{title},
+                          NOTICE_YN = #{notice_yn},
+                          CONTENTS = #{contents},
+                          CHG_ID = #{user_id},
+                          CHG_DT = SYSDATE()
         WHERE
             NOTICE_SEQ = #{notice_seq}
     </update>

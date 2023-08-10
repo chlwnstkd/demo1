@@ -273,6 +273,16 @@ a {
     border-bottom: 1px solid #000;
 }
 
+.board_write .title textarea {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 0;
+    resize: vertical;
+}
+
 .board_write .cont textarea {
     display: block;
     width: 100%;
